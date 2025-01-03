@@ -4,29 +4,30 @@ import useAuth from "../../hooks/useAuth";
 import { toast } from "react-hot-toast";
 import { TbFidgetSpinner } from "react-icons/tb";
 import axios from "axios";
+import { uploadImageToBB } from "../../api/utilities";
 
 const SignUp = () => {
   const { createUser, updateUserProfile, signInWithGoogle, loading } =
     useAuth();
   const navigate = useNavigate();
 
-  // upload image
-  const uploadImageToBB = async (image) => {
-    const formData = new FormData();
-    formData.append("image", image);
+  // // upload image
+  // const uploadImageToBB = async (image) => {
+  //   const formData = new FormData();
+  //   formData.append("image", image);
 
-    try {
-      const { data } = await axios.post(
-        `https://api.imgbb.com/1/upload?key=${
-          import.meta.env.VITE_IMGBB_API_KEY
-        }`,
-        formData
-      );
-      return data.data.url;
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  //   try {
+  //     const { data } = await axios.post(
+  //       `https://api.imgbb.com/1/upload?key=${
+  //         import.meta.env.VITE_IMGBB_API_KEY
+  //       }`,
+  //       formData
+  //     );
+  //     return data.data.url;
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
   // form submit handler
   const handleSubmit = async (event) => {
     event.preventDefault();
