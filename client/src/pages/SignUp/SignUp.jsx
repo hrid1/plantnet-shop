@@ -48,7 +48,6 @@ const SignUp = () => {
       await updateUserProfile(
         name,
         imageUrl
-        // "https://lh3.googleusercontent.com/a/ACg8ocKUMU3XIX-JSUB80Gj_bYIWfYudpibgdwZE1xqmAGxHASgdvCZZ=s96-c"
       );
       console.log(result);
 
